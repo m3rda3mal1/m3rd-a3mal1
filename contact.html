@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>العدسة السينمائية | تواصل معنا</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html"><h2>العدسة <span>السينمائية</span></h2></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="index.html#portfolio">معرض الأعمال</a></li>
+        </ul>
+    </nav>
+
+    <section class="contact-page">
+        <div class="section-title">
+            <h2>يلا نبدأ شغل؟</h2>
+            <p>ابعتلنا رسالة وهنرد عليك في أقرب وقت</p>
+        </div>
+
+        <div class="contact-container">
+            
+            <div class="contact-info">
+                <h3>طرق التواصل المباشر</h3>
+                <p>عايز تنجز؟ أسرع طريقة للرد هي الواتساب.</p>
+                
+                <a href="https://wa.me/97477637617" target="_blank" class="whatsapp-btn">💬 كلمني واتساب</a>
+                
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/cse.ahmedashour?igsh=MXZjOTQwam50ZzlmMA==" target="_blank">Instagram</a>
+                    <a href="#" target="_blank">YouTube</a>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form id="whatsappForm">
+                    <input type="text" id="clientName" placeholder="اسمك أو اسم المكان (المطعم/المحل)" required>
+                    <input type="tel" id="clientPhone" placeholder="رقم التليفون / الواتساب" required>
+                    <textarea id="clientMessage" rows="5" placeholder="تفاصيل الإعلان اللي محتاجه..." required></textarea>
+                    <button type="submit">ابعت الرسالة</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; 2026 العدسة السينمائية.</p>
+    </footer>
+
+    <script>
+        document.getElementById('whatsappForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // عشان الصفحة متعملش Refresh وتطير الكلام
+            
+            // هنجيب الكلام اللي العميل كتبه
+            var name = document.getElementById('clientName').value;
+            var phone = document.getElementById('clientPhone').value;
+            var message = document.getElementById('clientMessage').value;
+            
+            // هنرتب الرسالة بشكل شيك عشان توصلك جاهزة
+            var whatsappText = "مرحباً العدسة السينمائية، لدي طلب عمل جديد:" + "%0a%0a" + 
+                               "👤 الاسم: " + name + "%0a" + 
+                               "📞 رقم التواصل: " + phone + "%0a" + 
+                               "📝 التفاصيل: " + message;
+            
+            // رقمك بتاع قطر
+            var whatsappNumber = "97477637617"; 
+            
+            // هنعمل اللينك ونفتح الواتساب أوتوماتيك
+            var whatsappURL = "https://wa.me/" + whatsappNumber + "?text=" + whatsappText;
+            window.open(whatsappURL, '_blank');
+        });
+    </script>
+</body>
+</html>
+
